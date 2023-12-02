@@ -54,7 +54,7 @@
       >
         <q-card class="q-ma-md" style="width: 150px;" v-for="producto in productos" :key="producto.id">
           <q-card-section class="q-pa-none">
-            <q-img :src="`http://localhost:8000/images/${producto.imagen}`" />
+            <q-img :src="`http://137.184.46.177/images/${producto.imagen}`" />
           </q-card-section>
           <q-card-section class="q-pa-md">
             <div class="text-h6 text-bold">{{ producto.nombre }}</div>
@@ -93,11 +93,11 @@ export default defineComponent({
   },
   methods: {
     async getProductos () {
-      const response = await this.$axios.get('http://localhost:8000/api/products')
+      const response = await this.$axios.get('http://137.184.46.177/api/products')
       this.productos = response.data
     },
     async getCategorias () {
-      const response = await this.$axios.get('http://localhost:8000/api/categories')
+      const response = await this.$axios.get('http://137.184.46.177/api/categories')
       this.categorias = response.data
     }
   },
